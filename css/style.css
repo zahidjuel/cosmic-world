@@ -1,6 +1,5 @@
 
- /* ------------  Common Css Styles  ------------ */
-
+/* ------------  common css styles  ------------ */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
@@ -34,7 +33,7 @@ header{
     color: #ff008e;
 }
 
-/* --------------- button css -------- */
+/* --------------- button css ------------- */
 .primary-button{
     outline: 0;
     border: 0;
@@ -56,6 +55,8 @@ header{
     box-shadow: 0px 2px 0px #a5075e;
 }
 
+/* ------------- button css ------------- */
+
 .section-title{
     text-align: center;
 }
@@ -68,7 +69,10 @@ header{
     border-bottom: 2px solid #ff008e;
 }
 
-/* ------------- nabar section Style   ------------- */
+ /* ------------  common css Styles ------------- */
+
+
+/* ------------- nabar section Style   -------------- */
 
 nav{
     height: 80px;
@@ -97,7 +101,7 @@ nav{
     border: 2px solid gray;
 }
 
-/* ------------- banner section ----------- */
+/* ------------- banner section style ------------ */
 .banner{
     height: calc(100vh - 80px);
     display: grid;
@@ -135,7 +139,7 @@ nav{
     border: 2px solid gold;
 }
 
-/* --------------- Feature style css ---------- */
+/* --------------- feature section style -------------- */
 .feature{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -172,4 +176,60 @@ nav{
 .card a{
     text-decoration: none;
     color: #ff008e;
+}
+
+/* ----------- gallery section style ------------ */
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 2px solid red;
+    gap: 30px;
+}
+
+.photo img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #ff008e;
+}
+
+/* ----------- contact section style ------------ */
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    border: 2px solid rebeccapurple;
+}
+
+.contact-left img{
+    width: 100%;
+    border: 2px solid rebeccapurple;
+}
+
+.contact-right form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rebeccapurple;
+}
+
+.text-field{
+    outline: 0;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0px;
+    font-family: inherit;
+    border: 2px solid #ff008e;
+}
+
+/* -------------- footer section style ---------- */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: #fff;
+    background-color: #03203C;
+    margin-top: 50px;
 }
