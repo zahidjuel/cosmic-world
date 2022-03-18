@@ -26,7 +26,6 @@ header{
     max-width: 1200px;
     margin: 0px auto;
     padding: 0px 30px;
-    border: 2px dashed wheat;
 }
 
 .highlight{
@@ -44,6 +43,7 @@ header{
     color: #fff;
     cursor: pointer;
     box-shadow: 0px 7px 0px #a5075e;
+    border-radius: 5px;
     position: relative;
     left: 0px;
     top: 0px;
@@ -62,11 +62,12 @@ header{
 }
 
 .section-title h2{
-    font-size: 40px;
+    font-size: 45px;
     text-transform: uppercase;
+    letter-spacing: 5px;
     display: inline-block;
-    margin: 50px 0px;
-    border-bottom: 2px solid #ff008e;
+    margin: 50px 5px 40px 10px;
+    border-bottom: 3px solid #ff008e;
 }
 
 /* ---------- nav toggler -------- */
@@ -89,17 +90,14 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px dotted red;
 }
 .navigation{
     display: flex;
-    border: 2px dotted gray;
 }
 
 .navigation li{
     list-style-type: none;
     margin: 10px;
-    border: 2px solid gray;
 }
 
 .navigation li a{
@@ -108,16 +106,20 @@ nav{
     font-weight: 600;
     padding: 14px 16px;
     text-decoration: none;
-    border: 2px solid gray;
+    transition: .3s ease-in-out;
+}
+
+.navigation li a:hover{
+    color: #ff008e;
 }
 
 /* ------------- banner section style ------------ */
 .banner{
     height: calc(100vh - 80px);
-     min-height: 500px;
+    min-height: 500px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border: 2px solid red;
+    gap: 30px;
 }
 
 .banner-left{
@@ -125,7 +127,6 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: 2px solid red;
 }
 
 .banner-left h1{
@@ -147,7 +148,6 @@ nav{
 
 .banner-right img{
     width: 100%;
-    border: 2px solid gold;
 }
 
 /* --------------- feature section style -------------- */
@@ -160,7 +160,10 @@ nav{
     background-repeat: no-repeat;
     background-size: 200px;
     background-position-y: center;
-    border: 2px solid red;
+}
+
+.card:nth-child(odd){
+    text-align: right;
 }
 
 .card{
@@ -196,7 +199,10 @@ nav{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 30px;
-    border: 2px solid red;
+}
+
+.about-left{
+    text-align: center;
 }
 
 .about-left img{
@@ -208,7 +214,6 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    border: 2px dashed rebeccapurple;
 }
 
 .about-right h2{
@@ -225,15 +230,47 @@ nav{
 .gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: 2px solid red;
-    gap: 30px;
+    gap: 2rem;
+    place-items: center;
+    border: 2px solid gray;
+}
+
+.photo{
+    width: 300px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+    border: 3px solid #ff008e;
+}
+
+.photo::after{
+    content: ' ';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 2;
+    transition: .3s ease-out;
 }
 
 .photo img{
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    border: 3px solid #ff008e;
+    transition: .8s ease-in-out;
+    z-index: 1;
+}
+
+.photo:hover.photo::after{
+    opacity: 1;
+}
+
+.photo:hover img{
+    transform: scale(1.1);
 }
 
 /* ----------- contact section style ------------ */
@@ -241,19 +278,17 @@ nav{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 30px;
-    border: 2px solid rebeccapurple;
 }
 
 .contact-left img{
     width: 100%;
-    border: 2px solid rebeccapurple;
 }
 
 .contact-right form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border: 2px solid rebeccapurple;
 }
 
 .text-field{
@@ -263,7 +298,7 @@ nav{
     padding: 10px;
     margin: 10px 0px;
     font-family: inherit;
-    border: 2px solid #ff008e;
+    border: 1px solid #ff008e;
 }
 
 /* -------------- footer section style ---------- */
@@ -278,19 +313,21 @@ footer{
 }
 
 /* ----------- Responsive css ------------ */
-@media  only screen and  (max-width: 950px){
+@media  only screen and  (max-width: 988px){
     .gallery{
         grid-template-columns: repeat(2,1fr);
     }
     .banner-left h1{
         font-size: 35px;
     }
-    .feature{
+}
+@media only screen and (max-width: 1150px) {
+        .feature{
         background-image: unset;
     }
 }
 
-@media  only screen and (max-width:800px) {
+@media  only screen and (max-width:900px) {
     .banner{
         grid-template-columns: repeat(1,1fr);
         height: fit-content;
@@ -336,6 +373,6 @@ footer{
         padding: 0px;
     }
     #nav-toggler:checked ~ .navigation{
-         transform: translateY(0px);
+         transform: translate(0px);
     }
 }
